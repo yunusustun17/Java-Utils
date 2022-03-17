@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class CommandExecutorLinux extends CommandExecutor {
+public class CommandExecutorCmd extends CommandExecutor {
     public static Map<StdKey, List<String>> runCommand(String command) throws IOException {
         if (!initialized)
             initialize();
@@ -11,8 +11,8 @@ public class CommandExecutorLinux extends CommandExecutor {
     }
 
     private static void initialize() {
-        exe = "/bin/bash";
-        exeArg = "-c";
+        exe = "cmd";
+        exeArg = "/c";
 
         initialized = true;
     }
